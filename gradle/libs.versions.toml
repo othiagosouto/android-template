@@ -1,0 +1,50 @@
+[versions]
+activityx= "1.9.0"
+gradleplugin = "8.1.1"
+kotlin = "1.9.24"
+hilt = "2.51.1"
+lifecycle = "2.8.3"
+coroutines = "1.7.3"
+compose = "1.4.3"
+composeBom = "2024.06.00"
+
+[libraries]
+gson = "com.google.code.gson:gson:2.10.1"
+android-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-savedstate", version.ref = "lifecycle" }
+android-ktx-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+android-activity = { module = "androidx.activity:activity-ktx", version.ref = "activityx" }
+android-core = "androidx.core:core-ktx:1.13.1"
+android-appcompat = "androidx.appcompat:appcompat:1.7.0"
+android-material = "com.google.android.material:material:1.12.0"
+android-constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
+android-hilt = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+android-hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
+retrofit = "com.squareup.retrofit2:retrofit:2.11.0"
+retrofit-serialization = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0"
+kotlin-serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1"
+kotlin-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+okhttp = "com.squareup.okhttp3:okhttp:4.12.0"
+android-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+android-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+android-compose-material = { group = "androidx.compose.material", name = "material" }
+android-compose-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+android-compose-activity = "androidx.activity:activity-compose:1.9.0"
+#tests
+test-junit = "junit:junit:4.13.2"
+test-android-junit = "androidx.test.ext:junit:1.2.1"
+test-android-espresso = "androidx.test.espresso:espresso-core:3.6.1"
+test-android-compose = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+test-webserver = "dev.thiagosouto:webserver:0.1.14-SNAPSHOT"
+test-turbine = "app.cash.turbine:turbine:1.0.0"
+test-kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+test-core-android = "androidx.arch.core:core-testing:2.2.0"
+test-hilt = { module = "com.google.dagger:hilt-android-testing", version.ref = "hilt" }
+[bundles]
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "gradleplugin" }
+android-library = { id = "com.android.library", version.ref = "gradleplugin" }
+android-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
