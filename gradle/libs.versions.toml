@@ -1,5 +1,5 @@
 [versions]
-activityx= "1.9.0"
+activityx = "1.9.0"
 gradleplugin = "8.1.1"
 kotlin = "1.9.24"
 hilt = "2.51.1"
@@ -7,6 +7,8 @@ lifecycle = "2.8.3"
 coroutines = "1.7.3"
 compose = "1.4.3"
 composeBom = "2024.06.00"
+composeMaps = "6.0.0"
+maps-secret = "2.0.1"
 
 [libraries]
 gson = "com.google.code.gson:gson:2.10.1"
@@ -29,6 +31,9 @@ android-compose-foundation = { group = "androidx.compose.foundation", name = "fo
 android-compose-material = { group = "androidx.compose.material", name = "material" }
 android-compose-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 android-compose-activity = "androidx.activity:activity-compose:1.9.0"
+android-compose-maps = { group = "com.google.maps.android", name = "maps-compose", version.ref = "composeMaps" }
+android-compose-maps-utils = { group = "com.google.maps.android", name = "maps-compose-utils", version.ref = "composeMaps" }
+android-compose-maps-widgets = { group = "com.google.maps.android", name = "maps-compose-widgets", version.ref = "composeMaps" }
 #tests
 test-junit = "junit:junit:4.13.2"
 test-android-junit = "androidx.test.ext:junit:1.2.1"
@@ -43,6 +48,7 @@ test-hilt = { module = "com.google.dagger:hilt-android-testing", version.ref = "
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradleplugin" }
+android-maps-secret = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "maps-secret" }
 android-library = { id = "com.android.library", version.ref = "gradleplugin" }
 android-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.android.hilt)
+    alias(libs.plugins.android.maps.secret)
 }
 
 android {
@@ -59,6 +60,10 @@ dependencies {
     implementation(libs.android.core)
     implementation(libs.android.material)
 
+    implementation(libs.android.compose.maps)
+    implementation(libs.android.compose.maps.utils)
+    implementation(libs.android.compose.maps.widgets)
+
     implementation(libs.retrofit)
     implementation(libs.retrofit.serialization)
     implementation(libs.okhttp)
@@ -84,4 +89,11 @@ dependencies {
     androidTestImplementation(libs.test.android.compose)
 
     kaptAndroidTest(libs.android.hilt.compiler)
+}
+
+secrets {
+    // To add your Maps API key to this project:
+    // 1. Add this line to your local.properties file, where YOUR_API_KEY is your API key:
+    //        MAPS_API_KEY=YOUR_API_KEY
+    defaultPropertiesFileName = "local.properties"
 }
