@@ -47,21 +47,41 @@ android {
 }
 
 dependencies {
-    implementation(platform(libs.android.compose.bom))
+    val composeBom = platform(libs.android.compose.bom)
+    implementation(composeBom)
     implementation(libs.android.compose.foundation)
     implementation(libs.android.compose.material)
     implementation(libs.android.compose.activity)
     implementation(libs.android.compose.preview)
+    implementation(libs.android.lifecycle.viewmodel)
+    implementation(libs.android.ktx.viewmodel)
     implementation(libs.android.hilt)
     implementation(libs.android.core)
     implementation(libs.android.material)
 
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.serialization)
+    implementation(libs.okhttp)
+    implementation(libs.kotlin.serialization)
+    implementation(libs.kotlin.coroutines.android)
+
     implementation(libs.android.appcompat)
-    testImplementation(libs.test.junit)
-
-
 
     kapt(libs.android.hilt.compiler)
+
+    testImplementation(libs.test.junit)
+    testImplementation(libs.test.turbine)
+    testImplementation(libs.test.core.android)
+    testImplementation(libs.test.kotlin.coroutines)
+    testImplementation(libs.test.webserver)
+
+    androidTestImplementation(composeBom)
     androidTestImplementation(libs.test.android.junit)
     androidTestImplementation(libs.test.android.espresso)
+    androidTestImplementation(libs.test.hilt)
+    androidTestImplementation(libs.test.webserver)
+    androidTestImplementation(libs.test.core.android)
+    androidTestImplementation(libs.test.android.compose)
+
+    kaptAndroidTest(libs.android.hilt.compiler)
 }
